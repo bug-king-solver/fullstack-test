@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BaseLayout } from "../components";
 import { Outlet } from "react-router-dom";
 
@@ -9,8 +9,9 @@ const routes = () => {
   return {
     element: (
       <BaseLayout>
-        {" "}
-        <Outlet />{" "}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />{" "}
+        </Suspense>
       </BaseLayout>
     ),
     children: [
