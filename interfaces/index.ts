@@ -13,6 +13,16 @@ export interface IArticle {
     author: string;
     image_url: string;
     geo: string;
-    daily_traffic: IDailyTraffic[];
-    total_traffic: number;
+    daily_traffic: {
+      day: number;
+      hourly_traffic: {
+        hour: number;
+        traffic: number;
+      }[];
+    }[];
   }
+
+export interface IPaginatedArticles<T> {
+    paginatedArticles: T;
+    pageNumber: number | null;
+}
