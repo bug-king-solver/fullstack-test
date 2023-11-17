@@ -2,15 +2,19 @@ import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./router";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const mdTheme = createTheme();
 
 function App() {
+  const client = new QueryClient();
   const router = createBrowserRouter([routes()]);
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={client}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
