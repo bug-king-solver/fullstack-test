@@ -1,15 +1,10 @@
 import { IArticle } from '../../interfaces';
+import {calculateTotalTraffic} from '../../src/utils'
 
 const sortArticlesByTraffic = (articles: IArticle[]): IArticle[] => {
   return [...articles].sort((a, b) =>
-    getTrafficSum(b) - getTrafficSum(a)
+    calculateTotalTraffic(b.daily_traffic) - calculateTotalTraffic(a.daily_traffic)
   );
-
-  function getTrafficSum(article: IArticle): number {
-    return article.daily_traffic.reduce((sum, day) =>
-      sum + day.hourly_traffic.reduce((hourSum, hour) => hourSum + hour.traffic, 0), 0
-    );
-  }
 };
 
 const ArticleService = {
