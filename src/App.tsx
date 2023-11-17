@@ -1,19 +1,16 @@
-import React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { BaseLayout } from './components';
-import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
+import React from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./router";
 
 const mdTheme = createTheme();
 
 function App() {
+  const router = createBrowserRouter([routes()]);
+
   return (
     <ThemeProvider theme={mdTheme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={ <BaseLayout><Outlet /></BaseLayout> }>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
