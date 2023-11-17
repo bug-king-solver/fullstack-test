@@ -26,3 +26,13 @@ export interface IPaginatedArticles<T> {
     paginatedArticles: T;
     pageNumber: number | null;
 }
+
+export interface HourlyTraffic {
+  hour: number;
+  traffic: number;
+}
+
+export interface DailyTraffic {
+  day: number;
+  hourly_traffic: HourlyTraffic[];
+}
