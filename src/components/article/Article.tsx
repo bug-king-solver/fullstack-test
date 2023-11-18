@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material";
-import { DailyTraffic } from "../../../interfaces";
+import { DailyTraffic } from "../../interfaces";
 import { calculateTotalTraffic } from "../../utils";
 
 const Value = styled(Typography)`

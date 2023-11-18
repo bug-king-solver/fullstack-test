@@ -1,4 +1,4 @@
-import { DailyTraffic } from "../../interfaces"
+import { DailyTraffic } from "../interfaces"
 
 export const calculateTotalTraffic = (trafficData: DailyTraffic[]): number => {
   if (!Array.isArray(trafficData)) {

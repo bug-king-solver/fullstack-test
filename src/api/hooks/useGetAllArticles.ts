@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { IArticle, IPaginatedArticles } from '../../../interfaces';
+import { IArticle, IPaginatedArticles } from '../../interfaces';
 import { baseURL } from '../config';
 
 const fetchAllArticles = async (page: number, limit: number = 10): Promise<IPaginatedArticles<IArticle[]>> => {

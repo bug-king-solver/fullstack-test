@@ -1,4 +1,4 @@
-import { IArticle } from '../../interfaces';
+import { IArticle } from '../../src/interfaces';
 import {calculateTotalTraffic} from '../../src/utils'
 
 const sortArticlesByTraffic = (articles: IArticle[]): IArticle[] => {

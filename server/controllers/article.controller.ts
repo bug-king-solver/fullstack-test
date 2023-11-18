@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
 import { ArticleService } from "../services"
 import { rawData } from "../database"
-import { IPaginatedArticles } from "../../interfaces";
+import { IPaginatedArticles } from "../../src/interfaces" 
 
 const getAllArticles = (req: Request, res: Response, next: NextFunction): void => {
   try {
