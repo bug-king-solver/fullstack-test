@@ -6,6 +6,7 @@ import { IArticle } from "../../../interfaces";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { CircularIndeterminate, FailedAlert } from "../../common";
 
 const ClickableBox = styled(Box)({
   cursor: "pointer",
@@ -39,9 +40,9 @@ const ArticleList = () => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading && isFetchingNextPage) return <CircularIndeterminate />;
 
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <FailedAlert />;
   return (
     <>
       <Paper>
@@ -69,7 +70,6 @@ const ArticleList = () => {
           </React.Fragment>
         ))}
       </Paper>
-      {isFetchingNextPage && <div>Loading...</div>}
     </>
   );
 };
